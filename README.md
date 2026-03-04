@@ -24,7 +24,7 @@ letter-spacing:2px;
 }
 
 #map{
-height:80vh;
+height:90vh;
 }
 
 .panel{
@@ -71,9 +71,20 @@ color:white;
 
 <script>
 const map = L.map('map').setView([-12.9,-38.3],3);
+L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png', {
+    maxZoom: 19,
+}).addTo(map);
+    var salvador = [-12.908611, -38.322500]; // SSA
+var bogota = [4.70159, -74.1469]; // BOG
 
-L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
-.addTo(map);
+L.marker(salvador).addTo(map).bindPopup("Salvador (SSA)");
+L.marker(bogota).addTo(map).bindPopup("Bogotá (BOG)");
+
+L.polyline([salvador, bogota], {
+    color: '#00cfff',
+    weight: 3,
+    opacity: 0.8
+}).addTo(map);
 
 let routes=[];
 
