@@ -72,19 +72,21 @@ color:white;
 <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script>
-const map = L.map('map').setView([-12.9,-38.3],3);
+const map = L.map('map').setView([-14, -55], 4);
+
 L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
-    
-    var salvador = [-12.908611, -38.322500]; // SSA
-var bogota = [4.70159, -74.1469]; // BOG
+
+// 👇 LINHAS DE ROTAS AQUI
+var salvador = [-12.908611, -38.322500];
+var bogota = [4.70159, -74.1469];
 
 L.marker(salvador).addTo(map).bindPopup("Salvador (SSA)");
 L.marker(bogota).addTo(map).bindPopup("Bogotá (BOG)");
 
-L.L.polyline([salvador, bogota], {
+L.polyline([salvador, bogota], {
     color: '#00cfff',
     weight: 4,
     opacity: 0.9
