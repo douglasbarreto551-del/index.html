@@ -51,6 +51,11 @@ color:white;
 
 <header>ZENITH AIRWAYS — GLOBAL ROUTE NETWORK</header>
 
+<nav style="text-align:center; padding:15px; background:rgba(255,255,255,0.05);">
+<a href="index.html" style="color:white; margin:0 15px; text-decoration:none;">Home</a>
+<a href="fleet.html" style="color:white; margin:0 15px; text-decoration:none;">Fleet & Operations</a>
+</nav>
+
 <div id="map"></div>
 
 <div class="panel">
