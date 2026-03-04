@@ -9,11 +9,10 @@
 <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
 
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:#07121d;
-color:white;
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #0a192f, #10273d, #1b3b5a);
 }
 
 header{
