@@ -1,1 +1,99 @@
-# index.html
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Zenith Airways | Network</title>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css"/>
+
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:#07121d;
+color:white;
+}
+
+header{
+padding:20px;
+text-align:center;
+font-size:26px;
+background:linear-gradient(90deg,#07121d,#10273d);
+letter-spacing:2px;
+}
+
+#map{
+height:80vh;
+}
+
+.panel{
+padding:15px;
+background:#0f2236;
+}
+
+input,button{
+padding:10px;
+margin:5px;
+border:none;
+border-radius:6px;
+}
+
+button{
+background:#ff2f7d;
+color:white;
+}
+</style>
+</head>
+
+<body>
+
+<header>ZENITH AIRWAYS — GLOBAL ROUTE NETWORK</header>
+
+<div id="map"></div>
+
+<div class="panel">
+<h3>Adicionar rota (Admin)</h3>
+
+<input id="from" placeholder="Origem">
+<input id="to" placeholder="Destino">
+<button onclick="addRoute()">Adicionar</button>
+
+<div id="routes"></div>
+</div>
+
+<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+
+<script>
+const map = L.map('map').setView([-12.9,-38.3],3);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png')
+.addTo(map);
+
+let routes=[];
+
+function addRoute(){
+
+const from=document.getElementById("from").value;
+const to=document.getElementById("to").value;
+
+if(!from||!to)return;
+
+routes.push({from,to});
+
+updateList();
+}
+
+function updateList(){
+const div=document.getElementById("routes");
+div.innerHTML="";
+
+routes.forEach(r=>{
+div.innerHTML+=`✈ ${r.from} → ${r.to}<br>`;
+});
+}
+</script>
+
+</body>
+</html>
