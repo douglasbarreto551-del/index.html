@@ -82,10 +82,10 @@ var bogota = [4.70159, -74.1469]; // BOG
 L.marker(salvador).addTo(map).bindPopup("Salvador (SSA)");
 L.marker(bogota).addTo(map).bindPopup("Bogotá (BOG)");
 
-L.polyline([salvador, bogota], {
+L.L.polyline([salvador, bogota], {
     color: '#00cfff',
-    weight: 3,
-    opacity: 0.8
+    weight: 4,
+    opacity: 0.9
 }).addTo(map);
 
 let routes=[];
