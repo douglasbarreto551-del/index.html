@@ -71,11 +71,11 @@ color:white;
 
 <script>
 const map = L.map('map').setView([-12.9,-38.3],3);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-    attribution: '&copy; OpenStreetMap &copy; CARTO',
-    subdomains: 'abcd',
-    maxZoom: 19
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    attribution: '&copy; OpenStreetMap contributors'
 }).addTo(map);
+    
     var salvador = [-12.908611, -38.322500]; // SSA
 var bogota = [4.70159, -74.1469]; // BOG
 
